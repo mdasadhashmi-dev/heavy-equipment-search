@@ -13,6 +13,7 @@ Equipment listings written by different dealers are messy: the same brand appear
 - [x] Project setup: uv, Ruff (lint + format), pytest
 - [x] Price parser handling multiple formats, missing values and "POA", with 11 unit tests
 - [x] Brand name normalisation
+- [x] Engine-hours parser (commas, unit labels, missing values)
 - [ ] Full CSV loader with de-duplication
 - [ ] Data validation with Pydantic
 - [ ] Keyword search baseline
