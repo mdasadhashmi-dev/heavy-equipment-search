@@ -1,8 +1,10 @@
 """Load and clean heavy-equipment listings."""
 
+import pandas as pd
+
 
 def parse_price(raw):
-    if raw is None:
+    if pd.isna(raw):
         return None
     try:
         if isinstance(raw, (int, float)):
@@ -26,7 +28,7 @@ BRAND_ALIASES = {
 
 
 def normalize_brand(raw_brand):
-    if raw_brand is None:
+    if pd.isna(raw_brand):
         return None
     cleaned = raw_brand.strip()
     if not cleaned:
@@ -36,7 +38,7 @@ def normalize_brand(raw_brand):
 
 
 def parse_hours(raw):
-    if raw is None:
+    if pd.isna(raw):
         return None
     try:
         if isinstance(raw, (int, float)):
