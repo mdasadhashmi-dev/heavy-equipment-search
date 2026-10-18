@@ -1,4 +1,4 @@
-from heavy_equipment_search.loader import parse_price
+from heavy_equipment_search.loader import normalize_brand, parse_price
 
 
 def test_dollar_price():
@@ -54,3 +54,58 @@ def test_price_with_lowercase_usd():
 def test_price_with_mixed_case_usd():
     result = parse_price("UsD 85,000")
     assert result == 85000.0
+
+
+def test_normalize_brand_known():
+    result = normalize_brand("cat ")
+    assert result == "Caterpillar"
+
+
+def test_normalize_brand_unknown():
+    result = normalize_brand("XCMG")
+    assert result == "XCMG"
+
+
+def test_normalize_brand_none():
+    result = normalize_brand(None)
+    assert result is None
+
+
+def test_normalize_brand_empty_string():
+    result = normalize_brand("")
+    assert result == None
+
+
+def test_normalize_brand_whitespace():
+    result = normalize_brand("   ")
+    assert result == None
+
+
+def test_normalize_brand_case_insensitive():
+    result = normalize_brand("CATERPILLAR")
+    assert result == "Caterpillar"
+
+
+def test_normalize_brand_alias():
+    result = normalize_brand("jcb")
+    assert result == "JCB"
+
+
+def test_normalize_brand_alias_with_spaces():
+    result = normalize_brand("  jcb  ")
+    assert result == "JCB"
+
+
+def test_normalize_brand_alias_with_mixed_case():
+    result = normalize_brand("JcB")
+    assert result == "JCB"
+
+
+def test_normalize_brand_alias_with_mixed_case_and_spaces():
+    result = normalize_brand("  JcB  ")
+    assert result == "JCB"
+
+
+def test_normalize_brand_unknown_with_spaces():
+    result = normalize_brand("  XCMG ")
+    assert result == "XCMG"
