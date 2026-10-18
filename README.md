@@ -12,7 +12,7 @@ Equipment listings written by different dealers are messy: the same brand appear
 
 - [x] Project setup: uv, Ruff (lint + format), pytest
 - [x] Price parser handling multiple formats, missing values and "POA", with 11 unit tests
-- [ ] Brand name normalisation
+- [x] Brand name normalisation
 - [ ] Full CSV loader with de-duplication
 - [ ] Data validation with Pydantic
 - [ ] Keyword search baseline
@@ -49,4 +49,10 @@ uv run pytest -v
 
 `data/listings.csv` is a small **synthetic** dataset written for this project. It deliberately includes the inconsistencies found in real listings (brand spellings, price formats, missing values, duplicates). It does not contain real dealer or customer data.
 
-##
+## Skills demonstrated so far
+
+- Writing defensive data-cleaning functions for inconsistent real-world formats
+- Test-driven verification with pytest, including edge cases and regression tests for fixed bugs
+- Narrow, deliberate error handling (catching only expected errors)
+- Modern Python project tooling: uv, Ruff, `src/` layout
+- Git workflow and secret hygiene (`.env` excluded, `.env.example` committed)
