@@ -33,3 +33,16 @@ def normalize_brand(raw_brand):
         return None
     key = cleaned.lower()
     return BRAND_ALIASES.get(key, cleaned)
+
+
+def parse_hours(raw):
+    if raw is None:
+        return None
+    try:
+        if isinstance(raw, (int, float)):
+            return float(raw)
+        raw = raw.upper()
+        cleaned = raw.replace("HRS", "").replace(",", "").replace("HOURS", "").strip()
+        return float(cleaned) if cleaned else None
+    except ValueError:
+        return None
