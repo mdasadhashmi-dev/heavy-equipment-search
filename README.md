@@ -16,27 +16,28 @@ Equipment listings written by different dealers are messy: the same brand appear
 - [x] Engine-hours parser: commas, unit labels ("6,200 HRS"), missing values
 - [x] Consistent missing-value handling for pandas data (None, NaN, `<NA>`)
 - [x] Full CSV loader: applies all cleaners, converts types, removes duplicate listings
-- [ ] Data validation with Pydantic
+- [x] Data validation with Pydantic: a `Listing` model checks every cleaned row (required fields, types, NaN converted to missing)
 - [ ] Keyword search baseline
 - [ ] Semantic search with OpenAI embeddings (with caching to control API cost)
 - [ ] Evaluation: keyword vs semantic vs hybrid search on the same queries
 
-**Tests:** 46 passing (unit tests for each cleaning function, plus integration tests for the full loader).
+**Tests:** 50 passing (unit tests for each cleaning function and the data model, plus integration tests for the full loader).
 
 ## Tech stack
 
-Python 3.12 · pandas · pytest · Ruff · uv
+Python 3.12 · pandas · Pydantic · pytest · Ruff · uv
 
 ## Project structure
 
-```
 heavy-equipment-search/
 ├── data/listings.csv               # sample listings (synthetic, see note below)
 ├── src/heavy_equipment_search/
-│   └── loader.py                   # data cleaning functions
-├── tests/test_loader.py            # unit tests
+│   ├── loader.py                   # data cleaning functions + load_listings
+│   └── models.py                   # Pydantic Listing model
+├── tests/
+│   ├── test_loader.py              # cleaning and loader tests
+│   └── test_models.py              # model validation tests
 └── pyproject.toml                  # dependencies and tool config
-```
 
 ## Run it locally
 
@@ -63,3 +64,4 @@ uv run pytest -v
 - Narrow, deliberate error handling (catching only expected errors)
 - Modern Python project tooling: uv, Ruff, `src/` layout
 - Git workflow and secret hygiene (`.env` excluded, `.env.example` committed)
+- Schema validation with Pydantic, including custom validators for pandas missing values
