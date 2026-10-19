@@ -11,14 +11,17 @@ Equipment listings written by different dealers are messy: the same brand appear
 ## Progress
 
 - [x] Project setup: uv, Ruff (lint + format), pytest
-- [x] Price parser handling multiple formats, missing values and "POA", with 11 unit tests
-- [x] Brand name normalisation
-- [x] Engine-hours parser (commas, unit labels, missing values)
-- [ ] Full CSV loader with de-duplication
+- [x] Price parser: multiple formats ("$85,000", "USD 78500"), missing values and "POA"
+- [x] Brand name normalisation: known aliases to canonical names; unknown brands preserved
+- [x] Engine-hours parser: commas, unit labels ("6,200 HRS"), missing values
+- [x] Consistent missing-value handling for pandas data (None, NaN, `<NA>`)
+- [x] Full CSV loader: applies all cleaners, converts types, removes duplicate listings
 - [ ] Data validation with Pydantic
 - [ ] Keyword search baseline
 - [ ] Semantic search with OpenAI embeddings (with caching to control API cost)
 - [ ] Evaluation: keyword vs semantic vs hybrid search on the same queries
+
+**Tests:** 46 passing (unit tests for each cleaning function, plus integration tests for the full loader).
 
 ## Tech stack
 
@@ -52,8 +55,11 @@ uv run pytest -v
 
 ## Skills demonstrated so far
 
-- Writing defensive data-cleaning functions for inconsistent real-world formats
-- Test-driven verification with pytest, including edge cases and regression tests for fixed bugs
+- Defensive data-cleaning functions for inconsistent real-world formats (prices, brand names, engine hours)
+- Data pipelines with pandas: typed columns, nullable integers, de-duplication
+- Handling missing data correctly across Python and pandas (`None`, NaN, `pd.NA`)
+- Unit and integration testing with pytest, including edge cases and regression tests for bugs found
+- Verifying tests by breaking code on purpose
 - Narrow, deliberate error handling (catching only expected errors)
 - Modern Python project tooling: uv, Ruff, `src/` layout
 - Git workflow and secret hygiene (`.env` excluded, `.env.example` committed)
