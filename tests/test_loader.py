@@ -1,4 +1,15 @@
-from heavy_equipment_search.loader import normalize_brand, parse_price, parse_hours
+from pathlib import Path
+
+import pandas as pd
+
+from heavy_equipment_search.loader import (
+    load_listings,
+    normalize_brand,
+    parse_hours,
+    parse_price,
+)
+
+DATA_FILE = Path(__file__).parent.parent / "data" / "listings.csv"
 
 
 #### Price #####
@@ -204,3 +215,67 @@ def test_parse_hours_already_a_number():
 def test_parse_hours_nan():
     result = parse_hours(float("nan"))
     assert result is None
+
+
+### Load listings ####
+
+
+def test_load_listings_remove_duplicates():
+    df = load_listings(DATA_FILE)
+    assert df.shape[0] == 11  # Expecting 11 rows after removing duplicates
+
+
+def test_load_listings_columns():
+    df = load_listings(DATA_FILE)
+    expected_columns = [
+        "listing_id",
+        "title",
+        "brand",
+        "model",
+        "year",
+        "hours",
+        "location",
+        "description",
+        "price_usd",
+    ]
+    assert all(col in df.columns for col in expected_columns)
+    assert "price" not in df.columns  # Ensure the original price column is removed
+
+
+def test_load_listings_dtypes():
+    df = load_listings(DATA_FILE)
+    assert pd.api.types.is_float_dtype(df["price_usd"])
+    assert pd.api.types.is_float_dtype(df["hours"])
+    assert str(df["year"].dtype) == "Int64"
+
+
+def test_load_listings_brand_normalization():
+    df = load_listings(DATA_FILE)
+    assert (
+        df["brand"]
+        .isin(["Caterpillar", "Komatsu", "Volvo", "JCB", "Hitachi", "Liebherr"])
+        .all()
+    )
+
+
+def test_load_listings_duplicate_gone():
+    df = load_listings(DATA_FILE)
+    assert (
+        "1011" not in df["listing_id"].tolist()
+    )  # Ensure the duplicate listing is removed
+
+
+##test for every brand is canonical##
+
+
+def test_load_listings_all_brands_canonical():
+    df = load_listings(DATA_FILE)
+    assert set(df["brand"]) <= {
+        "Caterpillar",
+        "Komatsu",
+        "Volvo",
+        "JCB",
+        "Hitachi",
+        "Liebherr",
+        "XCMG",
+    }
