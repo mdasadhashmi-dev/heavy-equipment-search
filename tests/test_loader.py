@@ -9,7 +9,7 @@ from heavy_equipment_search.loader import (
     parse_price,
 )
 
-DATA_FILE = Path(__file__).parent.parent / "data" / "listings.csv"
+DATA_FILE = Path(__file__).parent / "fixtures" / "listings_sample.csv"
 
 
 #### Price #####

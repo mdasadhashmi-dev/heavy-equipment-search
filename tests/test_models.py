@@ -1,5 +1,6 @@
 from pydantic import ValidationError
 import pytest
+from pathlib import Path
 
 from heavy_equipment_search.models import Listing
 
@@ -55,7 +56,7 @@ def test_real_row_validates_from_data_file():
     # Load DATA_FILE with load_listings and take it into records, build a listing from each row, and assert there are 11
     from heavy_equipment_search.loader import load_listings
 
-    DATA_FILE = "data/listings.csv"
+    DATA_FILE = Path(__file__).parent / "fixtures" / "listings_sample.csv"
     df = load_listings(DATA_FILE)
     records = df.to_dict(orient="records")
     listings = [Listing(**row) for row in records]
