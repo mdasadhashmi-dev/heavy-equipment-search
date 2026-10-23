@@ -16,6 +16,8 @@ def parse_price(raw):
         return None
 
 
+# Doosan and Develon are kept separate on purpose: listings show the brand
+# written on the machine. (Develon is Doosan's newer brand name.)
 BRAND_ALIASES = {
     "cat": "Caterpillar",
     "caterpillar": "Caterpillar",
@@ -55,7 +57,7 @@ def load_listings(path):
     import pandas as pd
 
     # 1. Read the CSV with every column as text
-    df = pd.read_csv("data/listings.csv", dtype=str)
+    df = pd.read_csv(path, dtype=str)  # reads whichever file the caller chose
 
     # 2. Create price_usd from price; clean hours and brand in place
     df["price_usd"] = df["price"].map(parse_price)

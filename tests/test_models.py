@@ -1,6 +1,7 @@
-from pydantic import ValidationError
-import pytest
 from pathlib import Path
+
+import pytest
+from pydantic import ValidationError
 
 from heavy_equipment_search.models import Listing
 

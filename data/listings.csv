@@ -11,3 +11,41 @@ listing_id,title,brand,model,year,hours,price,location,description
 1010,Hitachi ZX200 Excavator,Hitachi,ZX200,2019,5200,"$81,000",Dubai,Excavator with hammer piping.
 1011,CAT 320 Excavator,CAT,320,2018,"6,200","$85,000",Dubai,Hydraulic excavator in good condition. New tracks fitted 2024.
 1012,Liebherr LTM 1050 Mobile Crane,Liebherr,LTM 1050,2014,12500,"$310,000",Abu Dhabi,50-tonne all-terrain mobile crane.
+1013,CAT 320D Crawler Excavator,CAT,320D,2015,"8,400","$72,000",Dubai,Tracked excavator in the 20-tonne class. Breaker piping fitted.
+1014,Caterpillar M318F Wheeled Excavator,Caterpillar,M318F,2019,4100,"USD 128,000",Abu Dhabi,Wheeled excavator on rubber tyres. Ideal for road works.
+1015,Komatsu PC200-8 Tracked Excavator,KOMATSU,PC200-8,2014,"10,200 hrs","$58,000",Jeddah,Crawler excavator with new undercarriage.
+1016,Hitachi Zaxis 200 Digger,Hitachi,Zaxis 200,2016,7300,"$69,500",Sharjah,Japanese-built digger. Hammer line installed.
+1017,Volvo EW160E Wheeled Excavator,Volvo,EW160E,2018,5600,"$96,000",Doha,16-tonne wheeled excavator with dozer blade.
+1018,Hyundai R220LC-9S Crawler Excavator,Hyundai,R220LC-9S,2017,6900,"$61,000",Dammam,22-tonne crawler excavator with long carriage.
+1019,Doosan DX225LCA Trackhoe,Doosan,DX225LCA,2016,"9,800","$54,000",Muscat,Tracked excavator in working condition.
+1020,SANY SY215C Tracked Excavator,SANY,SY215C,2021,2600,"$79,000",Riyadh,Low hours. 21-tonne crawler excavator.
+1021,XCMG XE215 Crawler Excavator,XCMG,XE215,2022,1800,"$74,000",Kuwait City,Nearly new tracked excavator.
+1022,CAT 330D Excavator,Cat,330D,2013,"12,600","$88,000",Dubai,30-tonne class excavator with heavy duty bucket.
+1023,Komatsu PC350LC-8 Excavator,Komatsu,PC350LC-8,2015,"9,900 hrs",POA,Abu Dhabi,Large crawler excavator. Price on request.
+1024,Kobelco SK210 Tracked Excavator,Kobelco,SK210,2018,5400,"$83,000",Ajman,Tracked excavator with quick hitch.
+1025,JCB JS220 Tracked Excavator,JCB,JS220,2017,6100,"$67,000",Sharjah,Crawler excavator with recent service.
+1026,Caterpillar D8T Bulldozer,CATERPILLAR,D8T,2014,"14,300","$215,000",Riyadh,Large crawler dozer with single shank ripper.
+1027,Komatsu D65EX Dozer,Komatsu,D65EX,2016,"9,700","$128,000",Jeddah,Crawler tractor for earthmoving.
+1028,Shantui SD22 Crawler Tractor,Shantui,SD22,2020,3900,"$64,000",Dammam,Bulldozer with straight tilt blade.
+1029,CAT 950H Wheel Loader,CAT,950H,2012,"15,800","$76,000",Dubai,Front loader with 3.5 m3 bucket.
+1030,Komatsu WA470 Front Loader,Komatsu,WA470,2017,8200,"$112,000",Muscat,Wheel loader for quarry work.
+1031,Volvo L90H Shovel,Volvo,L90H,2019,4700,"$99,000",Doha,Wheel loader also used as a yard shovel.
+1032,Liugong 856H Wheel Loader,Liugong,856H,2022,1500,USD 58000,Abu Dhabi,5-tonne payload loader.
+1033,JCB 3CX Backhoe,JCB,3CX,2019,"3,300 hrs","$48,000",Riyadh,Backhoe loader with extending dipper.
+1034,CAT 428F Backhoe Loader,Caterpillar,428F,2018,4500,"$52,000",Manama,Two-wheel-drive backhoe loader.
+1035,Case 580ST Backhoe Loader,Case,580ST,2020,2400,"$59,000",Kuwait City,Backhoe with four-in-one bucket.
+1036,Bobcat S650 Skid Steer,Bobcat,S650,2021,1200,"$38,000",Dubai,Compact skid steer loader with pallet forks.
+1037,Liebherr LTM 1090 Mobile Crane,Liebherr,LTM 1090,2012,"16,000","$520,000",Dammam,90-tonne all-terrain crane.
+1038,Tadano GR-500EX Rough Terrain Crane,Tadano,GR-500EX,2016,7800,POA,Abu Dhabi,50-tonne rough terrain crane. Price on application.
+1039,XCMG QY50K Truck Crane,XCMG,QY50K,2019,5200,"$145,000",Riyadh,50 ton truck-mounted crane.
+1040,CAT 140M Motor Grader,CAT,140M,2014,"11,500","$165,000",Jeddah,Motor grader with ripper for road construction.
+1041,Komatsu GD655 Grader,Komatsu,GD655,2016,8900,"$118,000",Doha,Motor grader in good condition.
+1042,Bomag BW211 Single Drum Roller,Bomag,BW211,2018,3600,"$42,000",Sharjah,11-tonne soil compactor.
+1043,Dynapac CA250 Compactor,Dynapac,CA250,2015,6200,"$35,000",Muscat,Vibratory roller for road base.
+1044,Volvo A40G Articulated Dump Truck,Volvo,A40G,2017,"12,100","$198,000",Riyadh,40-tonne articulated hauler.
+1045,CAT 745 Articulated Truck,CAT,745,2018,9400,"$265,000",Abu Dhabi,ADT dump truck for mining.
+1046,Hitachi ZX350LC-5 Crawler Excavator,Hitachi,ZX350LC-5,2017,"8,800 hrs","$112,000",Jeddah,35-tonne tracked excavator.
+1047,Hyundai HW210 Wheeled Excavator,Hyundai,HW210,2019,4600,"$118,000",Dubai,21-tonne wheel excavator with outriggers.
+1048,Develon DX225LC-7 Excavator,Develon,DX225LC-7,2023,900,"$105,000",Sharjah,Doosan machines are now sold under the Develon brand. 22-tonne crawler excavator.
+1049,John Deere 850K Crawler Dozer,John Deere,850K,2015,7600,"$122,000",Kuwait City,Mid-size bulldozer with six-way blade.
+1050,Komatsu PC210LC-10 Tracked Excavator,komatsu,PC210LC-10,2020,,"$102,000",Dammam,Hours meter not recorded. 21-tonne crawler excavator.
